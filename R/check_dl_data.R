@@ -44,4 +44,34 @@ local_path = function(){
   if(!file.exists(path)){
     dir.create(path, recursive = TRUE)
   }
+  return(path)
+}
+
+#' @title Return path to Adirondack Park Shapefile
+#'
+#'
+#' @description
+#' Downloads and unpacks the shapefile for the Adirondack Park
+#' outline shapefile. Returns the path to a locally stored shapefile
+#' that can be used for mapping an analysis.
+#'
+#'
+#'
+#' @import httr
+#'
+#' @export
+adk_shape = function(){
+  dataurl = 'https://apa.ny.gov/gis/_assets/AdirondackParkBoundary.zip'
+
+  if(file.exists(file.path(local_path(), 'BlueLine2014Poly.shp'))){
+    return(file.path(local_path(), 'BlueLine2014Poly.shp'))
+  }
+
+  ziptemp = tempfile(fileext = '.zip')
+  r = RETRY('GET', dataurl, write_disk(ziptemp, overwrite=TRUE))
+  stop_for_status(r)
+  #extract files to
+  unzip(ziptemp, exdir = local_path())
+
+  return(file.path(local_path(), 'BlueLine2014Poly.shp'))
 }
