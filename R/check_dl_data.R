@@ -61,17 +61,5 @@ local_path = function(){
 #'
 #' @export
 adk_shape = function(){
-  dataurl = 'https://apa.ny.gov/gis/_assets/AdirondackParkBoundary.zip'
-
-  if(file.exists(file.path(local_path(), 'BlueLine2014Poly.shp'))){
-    return(file.path(local_path(), 'BlueLine2014Poly.shp'))
-  }
-
-  ziptemp = tempfile(fileext = '.zip')
-  r = RETRY('GET', dataurl, write_disk(ziptemp, overwrite=TRUE))
-  stop_for_status(r)
-  #extract files to
-  unzip(ziptemp, exdir = local_path())
-
-  return(file.path(local_path(), 'BlueLine2014Poly.shp'))
+  return(system.file("extdata", "BlueLine2014Poly.shp", package = "adklakedata"))
 }
