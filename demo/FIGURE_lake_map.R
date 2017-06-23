@@ -9,6 +9,7 @@ library(ggsn)
 library(ggmap)
 library("gridExtra")
 library(grid)
+library(magick)
 
 
 # http://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html
@@ -156,4 +157,11 @@ sbbox_fancy = make_bbox(lon = dat.forbox$long, lat = dat.forbox$lat, f= 0.05)
       png(file =  "NYS_simple.png", width = 3*ppi, height = 3*ppi, res = ppi)
       tt.simple
       dev.off()
-
+adk_parkmap = image_read("ADK_parkmap_FANCY.png")
+nys_map = image_read("NYS_simple.png")
+nys_map = image_crop(nys_map, "870x666")
+nys_map = image_crop(nys_map, "694x560+176+106")
+nys_map = image_scale(nys_map, "50%x50%")
+nys_map = image_border(nys_map, "black", "2x2")
+composite = image_composite(adk_parkmap, nys_map, offset = "+500+50")
+image_write(composite, "map_figure_composite.png", format = "png")
