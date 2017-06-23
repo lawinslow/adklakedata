@@ -1,3 +1,5 @@
+devtools::install_github("dkahle/ggmap") # fix loading png images
+
 # Create lake sites figure
 library(adklakedata)
 library(ggplot2)
@@ -46,14 +48,12 @@ tt = ggplot() +
           geom_point(data=lakesites, aes(x=long, y=lat), color="grey40", size=2, pch=16, alpha = 0.6) +
           labs(x = "Longitude", y = "Latitude")+
           theme_adkmap()+
-          coord_map('lambert', lat0=20, lat1=50)+
+          coord_map('lambert', lat0=20, lat1=50)#+
           #scalebar(ny, dist = 50, dd2km = TRUE, model ='WGS84', location = "bottomleft", st.size = 3)
 
 # add in North Arrow
  north2(tt, x = 0.9, y = 0.9, symbol = 11)
 
-#### TERRAIN MAPS  ####
-devtools::install_github("dkahle/ggmap") # for a bug fix
 
 # get background terrain images for park
 sbbox <- make_bbox(lon = adk_df$long, lat = adk_df$lat, f = .1)
@@ -74,12 +74,12 @@ bigmap = ggmap(big_map)+
             theme_adkmap()+
             scalebar(subset(ny,long >=-79.5 & lat >= 40.75) , dist = 50, dd2km = TRUE, model ='WGS84', st.size = 3, location = "bottomleft")
 # add North Arrow
-  #north2(bigmap, x = 0.9, y = 0.89, symbol = 11)
+ # north2(bigmap, x = 0.9, y = 0.89, symbol = 11)
 
 ### PARK WITH LAKES
 inbox = ggmap(inbox_map)+
           geom_polygon(data=adk_df, aes(long, lat), color='blue', fill= NA) +
-          geom_point(data=lakesites, aes(x=long, y=lat), color="red", size=2, pch=16, alpha = 0.6) +
+          geom_point(data=lakesites, aes(x=long, y=lat), color="blue", size=2, pch=16, alpha = 0.6) +
           labs(x = "Longitude", y = "Latitude")+
           #coord_map('lambert', lat0=20, lat1=50)+
           theme_adkmap()+
@@ -141,7 +141,7 @@ sbbox_fancy = make_bbox(lon = dat.forbox$long, lat = dat.forbox$lat, f= 0.05)
 
      bigmap =  ggmap(map_fancy)+
           geom_polygon(data=adk_df, aes(long, lat), color='blue', fill= NA) +
-          geom_point(data=lakesites, aes(x=long, y=lat), color="red", size=2, pch=16, alpha = 0.6) +
+          geom_point(data=lakesites, aes(x=long, y=lat), color="blue", size=2, pch=16, alpha = 0.6) +
           labs(x = "Longitude", y = "Latitude")+
           #coord_map('lambert', lat0=20, lat1=50)+
           theme_adkmap()+
