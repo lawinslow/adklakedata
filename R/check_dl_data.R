@@ -18,6 +18,8 @@
 #'
 #'
 #' @export
+
+
 check_dl_data = function(){
 
   dataurl = 'https://ndownloader.figshare.com/files/7797520?private_link=524a51a33a9104602f32'
@@ -61,17 +63,11 @@ local_path = function(){
 #'
 #' @export
 adk_shape = function(){
-  dataurl = 'https://apa.ny.gov/gis/_assets/AdirondackParkBoundary.zip'
+  return(system.file("extdata", "BlueLine2014Poly.shp", package = "adklakedata"))
+}
 
-  if(file.exists(file.path(local_path(), 'BlueLine2014Poly.shp'))){
-    return(file.path(local_path(), 'BlueLine2014Poly.shp'))
+.onAttach = function(libname, pkgname){
+  if(!file.exists(file.path(local_path(), 'waterchem_cleaned.csv'))){
+    packageStartupMessage("data not downoaded, run check_dl_data()")
   }
-
-  ziptemp = tempfile(fileext = '.zip')
-  r = RETRY('GET', dataurl, write_disk(ziptemp, overwrite=TRUE))
-  stop_for_status(r)
-  #extract files to
-  unzip(ziptemp, exdir = local_path())
-
-  return(file.path(local_path(), 'BlueLine2014Poly.shp'))
 }

@@ -15,4 +15,3 @@ you will be required to re-download data when a new version of
 the package is released. This ensures stale data are not being
 accidentally used.
 }
-
