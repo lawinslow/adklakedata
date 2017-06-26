@@ -11,22 +11,11 @@
 adk_data = function(data_name){
   data_name = tolower(data_name)
   path = local_path()
-  if(data_name == "chem"){
-    return(read.csv(file.path(local_path(), "waterchem_cleaned.csv")))
-  }
-  else if(data_name == "rotifer"){
-    return(read.csv(file.path(local_path(), "rotifer_cleaned.csv")))
-  }
-  else if(data_name == "phyto"){
-    return(read.csv(file.path(local_path(), "phyto_cleaned.csv")))
-  }
-  else if(data_name == "crustacean"){
-    return(read.csv(file.path(local_path(), "crustacean_cleaned.csv")))
-  }
-  else if(data_name == "tempdo"){
-    return(read.csv(file.path(local_path(), "TempDOprofiles_all.csv")))
-  }
-  else if(data_name == "meta"){
-    return(read.csv(file.path(local_path(), "lake.typeandInfo.csv")))
-  }
+  filenames = c("chem" = "waterchem_cleaned.csv",
+                "rotifer" = "rotifer_cleaned.csv",
+                "phyto" = "phyto_cleaned.csv",
+                "crustacean" = "crustacean_cleaned.csv",
+                "tempdo" = "TempDOprofiles_all.csv",
+                "meta" = "lake.typeandInfo.csv")
+  return(read.csv(file.path(local_path(), filenames[[data_name]])))
 }
