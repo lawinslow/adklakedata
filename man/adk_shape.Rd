@@ -11,4 +11,3 @@ Downloads and unpacks the shapefile for the Adirondack Park
 outline shapefile. Returns the path to a locally stored shapefile
 that can be used for mapping an analysis.
 }
-

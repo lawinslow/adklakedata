@@ -18,6 +18,8 @@
 #'
 #'
 #' @export
+
+
 check_dl_data = function(){
 
   dataurl = 'https://ndownloader.figshare.com/files/7797520?private_link=524a51a33a9104602f32'
@@ -62,4 +64,10 @@ local_path = function(){
 #' @export
 adk_shape = function(){
   return(system.file("extdata", "BlueLine2014Poly.shp", package = "adklakedata"))
+}
+
+.onAttach = function(libname, pkgname){
+  if(!file.exists(file.path(local_path(), 'waterchem_cleaned.csv'))){
+    packageStartupMessage("data not downoaded, run check_dl_data()")
+  }
 }
