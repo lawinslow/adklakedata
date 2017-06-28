@@ -10,8 +10,7 @@
 #' 
 #' @import httr
 #' @import tools
-#' 
-#' @export
+
 
 check_dl_file = function(master_file, fname = NULL, md5check = TRUE, dest=local_path()){
   files = read.csv(master_file)
@@ -22,9 +21,12 @@ check_dl_file = function(master_file, fname = NULL, md5check = TRUE, dest=local_
     if(!file.exists(file.path(dest, x["filename"]))){
       r = RETRY("GET", url=x["URL"], write_disk(file.path(dest,x["filename"]), overwrite=TRUE), times = 2)
       stop_for_status(r)
+      if(!file.exists(file.path(dest, x["filename"]))){
+        stop("Data downloaded was incomplete or corrupted - please try again later or submit a bug report.")
+      }
       if(md5sum(file.path(dest, x["filename"])) != x["MD5"]){
         file.remove(file.path(dest, x["filename"]))
-        stop("Hash mismatch error when downloading data - please try again later or submit a bug report.")
+        stop("Data downloaded was incomplete or corrupted - please try again later or submit a bug report.")
       }
     }
   })
@@ -33,28 +35,14 @@ check_dl_file = function(master_file, fname = NULL, md5check = TRUE, dest=local_
      if(md5sum(file.path(dest, x["filename"])) != x["MD5"]){
        r = RETRY("GET", url=x["URL"], write_disk(file.path(dest, x["filename"]), overwrite=TRUE))
        stop_for_status(r)
+       if(!file.exists(file.path(dest, x["filename"]))){
+         stop("Data downloaded was incomplete or corrupted - please try again later or submit a bug report.")
+       }
        if(md5sum(file.path(dest, x["filename"])) != x["MD5"]){
          file.remove(file.path(dest, x["filename"]))
-         stop("Hash mismatch error when downloading data - please try again later or submit a bug report.")
+         stop("Data downloaded was incomplete or corrupted - please try again later or submit a bug report.")
        }
      }
     })
   }
- }
-
-#' @title Create master file for use in check_dl_file
-#' 
-#' @param master_file Character path to export csv
-#' @param urllist Character vector of URLs
-#' @param filelist Character vector of files
-#' 
-#' @import tools
-#' 
-#' @export
-
- create_dl_file = function(master_file, urllist, filelist){
-   hashes = md5sum(filelist)
-   dl_file = data.frame(urllist, filelist, hashes)
-   colnames(dl_file) = c("URL", "filename", "MD5")
-   write.csv(dl_file, master_file, row.names = FALSE)
  }
