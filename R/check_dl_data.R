@@ -21,23 +21,7 @@
 
 
 check_dl_data = function(){
-
-  dataurl = 'https://ndownloader.figshare.com/files/7797520?private_link=524a51a33a9104602f32'
-
-  #check to see if we have local copy of files,
-  # for now, just see if we have waterchem file, may replace by list of files later
-  if(file.exists(file.path(local_path(), 'waterchem_cleaned.csv'))){
-    return()
-  }
-
-  #if we get here, we don't have the files locally, so download and extract
-
-  #dl file to temp location
-  ziptemp = tempfile(fileext = '.zip')
-  r = RETRY('GET', dataurl, write_disk(ziptemp, overwrite=TRUE))
-  stop_for_status(r)
-  #extract files to
-  unzip(ziptemp, exdir = local_path())
+  check_dl_file(system.file("extdata/master.csv", package = "adklakedata"))
 }
 
 
