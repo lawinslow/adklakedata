@@ -1,14 +1,15 @@
 Package: adklakedata
 Type: Package
 Title: What the Package Does (Title Case)
-Version: 0.1.3
+Version: 0.2.0
 Authors@R: c(person("Luke", "Winslow", role = c("aut", "cre"),
     email = "lawinslow@gmail.com"), person("Taylor", "Leach", role=c("aut")))
 Description: 
 License: What license is it under?
 Imports:
     rappdirs,
-    httr
+    httr,
+    tools
 Suggests:
     ggplot2,
     maps
