@@ -1,0 +1,5 @@
+lake.name		name of each lake (standardized across all files)
+date			date of measurement in YYYY-MM-DD format
+depth			depth of reading in meters
+temp			water temperature in degrees Celcius
+doobs			dissolved oxygen in mg/L
