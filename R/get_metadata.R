@@ -1,6 +1,6 @@
 #' @title Get metadata
 #'
-#' @param dataset_name 
+#' @param dataset_name character name of dataset
 #'
 #' @return Metadata about dataset
 #' @export
