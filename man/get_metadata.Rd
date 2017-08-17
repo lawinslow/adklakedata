@@ -4,10 +4,10 @@
 \alias{get_metadata}
 \title{Get metadata}
 \usage{
-get_metadata(dataset_name)
+get_metadata("chem")
 }
 \arguments{
-\item{dataset_name}{}
+\item{dataset_name}{character name of dataset. See \code{\link{adk_data}} documentation for dataset names.}
 }
 \value{
 Metadata about dataset

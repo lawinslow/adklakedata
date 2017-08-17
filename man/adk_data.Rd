@@ -7,8 +7,20 @@
 adk_data(data_name)
 }
 \arguments{
-\item{data_name}{A string choosing the data to load. Can be "chem", "rotifer", "phyto", "crustacean", "tempdo", or "meta".}
+\item{data_name}{A string choosing the data to load. 
+\tabular{ll}{
+\strong{data_name} \tab \strong{data file loaded} \cr
+chem \tab waterchemALTM1994_2012.csv \cr
+crustacean \tab crustacean_withbiomass.csv \cr
+meta \tab lake.typeandInfo.csv \cr
+nutrient \tab nutrient.csv \cr
+phyto \tab phyto_withbiomass.csv \cr
+rotifer \tab rotifer_withbiomass.csv \cr
+secchi \tab secchi.csv \cr
+tempdo \tab temp_do_profiles.csv \cr
+zoop_biomass_conversion_table \tab zoop_biomass_conversion_table.csv
+}}
 }
 \description{
-Loads data from locally downloaded CSV files. Run check_dl_data before using this function.
+Loads data from locally downloaded CSV files. Run \code{\link{check_dl_data}} before using this function.
 }
