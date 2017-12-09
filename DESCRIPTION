@@ -1,7 +1,7 @@
 Package: adklakedata
 Type: Package
 Title: Adirondack Long-term Lake Data
-Version: 0.3.1
+Version: 0.4.0
 Authors@R: c(person("Luke", "Winslow", role = c("aut", "cre"),
     email = "lawinslow@gmail.com"), person("Taylor", "Leach", role=c("aut")), 
     person("Tobi", "Hahn", role=c("aut")))

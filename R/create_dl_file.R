@@ -5,7 +5,7 @@
 #' @param filelist Character vector of files
 #' 
 #' @import tools
-#' 
+#' @noRd
 #' @keywords internal
 create_dl_file = function(master_file, urllist, filelist){
   hashes = md5sum(filelist)

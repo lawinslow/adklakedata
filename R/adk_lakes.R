@@ -8,13 +8,11 @@
 #'
 #'
 #' @examples
-#'
+#' set_local_path(tempdir())
 #' sites = adk_lakes()
 #'
 #'
 #' @export
 adk_lakes = function(){
-
-  sites = read.table(file.path(local_path(), 'ALTM_AEAP_Name_Coordinates_THL.csv'), sep=',', header=TRUE, quote='')
-  return(sites)
+  return(adk_data('meta'))
 }

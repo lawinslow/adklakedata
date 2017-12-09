@@ -2,7 +2,8 @@
 #'
 #' @param data_name character name of dataset. See \code{\link{adk_data}} documentation for dataset names.
 #' 
-#' @return Metadata about each dataset. Includes units and long-name of parameters
+#' @description Function to recall metadata about each dataset. Includes units and long-name of parameters.
+#' Prints info to console as well as returning text. 
 #' 
 #' @examples 
 #' 
