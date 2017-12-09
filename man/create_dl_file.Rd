@@ -13,3 +13,4 @@ create_dl_file(master_file, urllist, filelist)
 
 \item{filelist}{Character vector of files}
 }
+\keyword{internal}

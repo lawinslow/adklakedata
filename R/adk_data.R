@@ -1,15 +1,13 @@
-filenames = c("chem" = "waterchemALTM1994_2012.csv",
-              "crustacean" = "crustacean_withbiomass.csv",
-              "meta" = "lake.typeandInfo.csv",
-              "nutrient" = "nutrient.csv",
-              "phyto" = "phyto_withbiomass.csv",
-              "rotifer" = "rotifer_withbiomass.csv",
+filenames = c("chem" = "waterchem.csv",
+              "crustacean" = "crustacean.csv",
+              "meta" = "lake_characteristics.csv",
+              "nutrient" = "nutrients.csv",
+              "phyto" = "phyto.csv",
+              "rotifer" = "rotifer.csv",
               "secchi" = "secchi.csv",
-              "tempdo" = "temp_do_profiles.csv",
-              "zoop_biomass_conversion_table" = "zoop_biomass_conversion_table.csv")
+              "tempdo" = "temp_do_profiles.csv")
 
 #' @title Load ADK Data
-#' 
 #' 
 #' @description 
 #' Loads data from locally downloaded CSV files. Run \code{\link{check_dl_data}} before using this function.
@@ -25,7 +23,6 @@ filenames = c("chem" = "waterchemALTM1994_2012.csv",
 #' rotifer \tab rotifer_withbiomass.csv \cr
 #' secchi \tab secchi.csv \cr
 #' tempdo \tab temp_do_profiles.csv \cr
-#' zoop_biomass_conversion_table \tab zoop_biomass_conversion_table.csv
 #' }
 #' 
 #' @export
@@ -33,6 +30,7 @@ adk_data = function(data_name){
   data_name = tolower(data_name)
   data_name = match.arg(data_name, names(filenames))
   path = local_path()
-  check_dl_file(system.file("extdata/master.csv", package = "adklakedata"), fname = filenames[[data_name]])
+  check_dl_data()
+  
   return(read.csv(file.path(local_path(), filenames[[data_name]])))
 }

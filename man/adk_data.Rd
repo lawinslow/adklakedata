@@ -18,7 +18,6 @@ phyto \tab phyto_withbiomass.csv \cr
 rotifer \tab rotifer_withbiomass.csv \cr
 secchi \tab secchi.csv \cr
 tempdo \tab temp_do_profiles.csv \cr
-zoop_biomass_conversion_table \tab zoop_biomass_conversion_table.csv
 }}
 }
 \description{

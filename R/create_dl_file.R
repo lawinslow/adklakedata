@@ -6,7 +6,7 @@
 #' 
 #' @import tools
 #' 
-
+#' @keywords internal
 create_dl_file = function(master_file, urllist, filelist){
   hashes = md5sum(filelist)
   dl_file = data.frame(urllist, filelist, hashes)
