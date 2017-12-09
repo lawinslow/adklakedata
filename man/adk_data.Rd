@@ -24,3 +24,12 @@ met    \tab Lake-specific Meterology (air temp, wind, precip, etc) \cr
 \description{
 Loads data from locally downloaded CSV files. Run \code{\link{check_dl_data}} before using this function.
 }
+\examples{
+# set temp directory as local path
+set_local_path(tempdir())
+
+#grab secchi data and plot it
+secchi = adk_data('secchi')
+plot(as.POSIXct(secchi$date), secchi$secchi)
+
+}

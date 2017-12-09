@@ -13,7 +13,8 @@ License: MIT
 Imports:
     rappdirs,
     httr,
-    tools
+    tools,
+    utils
 Suggests:
     ggplot2,
     maps

@@ -26,6 +26,17 @@ filenames = c("chem" = "waterchem.csv",
 #' tempdo \tab Temperature and Dissolved Oxygen Profiles \cr
 #' met    \tab Lake-specific Meterology (air temp, wind, precip, etc) \cr
 #' }
+#'
+#' 
+#' @import utils 
+#' 
+#' @examples 
+#' # set temp directory as local path
+#' set_local_path(tempdir())
+#' 
+#' #grab secchi data and plot it
+#' secchi = adk_data('secchi')
+#' plot(as.POSIXct(secchi$date), secchi$secchi)
 #' 
 #' @export
 adk_data = function(data_name){

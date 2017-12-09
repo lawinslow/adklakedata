@@ -16,6 +16,7 @@ env$cust_local_path = NULL
 #'
 #' @import httr
 #' @import rappdirs
+#' @import utils
 #'
 #'
 #' @export
