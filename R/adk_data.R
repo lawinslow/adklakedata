@@ -5,7 +5,8 @@ filenames = c("chem" = "waterchem.csv",
               "phyto" = "phyto.csv",
               "rotifer" = "rotifer.csv",
               "secchi" = "secchi.csv",
-              "tempdo" = "temp_do_profiles.csv")
+              "tempdo" = "temp_do_profiles.csv", 
+              "met" = "nldas_drivers_1979_2016.csv")
 
 #' @title Load ADK Data
 #' 
@@ -14,15 +15,16 @@ filenames = c("chem" = "waterchem.csv",
 #' 
 #' @param data_name A string choosing the data to load. 
 #' \tabular{ll}{
-#' \strong{data_name} \tab \strong{data file loaded} \cr
-#' chem \tab waterchemALTM1994_2012.csv \cr
-#' crustacean \tab crustacean_withbiomass.csv \cr
-#' meta \tab lake.typeandInfo.csv \cr
-#' nutrient \tab nutrient.csv \cr
-#' phyto \tab phyto_withbiomass.csv \cr
-#' rotifer \tab rotifer_withbiomass.csv \cr
-#' secchi \tab secchi.csv \cr
-#' tempdo \tab temp_do_profiles.csv \cr
+#' \strong{Data name (data_name)} \tab \strong{Data Description} \cr
+#' chem \tab Lake Chemistry \cr
+#' crustacean \tab Crustacean Zooplankton Biomass \cr
+#' meta \tab Lake-specific metadata (type, location, morphology) \cr
+#' nutrient \tab Lake Nutrients \cr
+#' phyto \tab Phytoplankton Biomass Observations \cr
+#' rotifer \tab Rotifer Zooplankton Biomass \cr
+#' secchi \tab Lake Secchi Depth Observations \cr
+#' tempdo \tab Temperature and Dissolved Oxygen Profiles \cr
+#' met    \tab Lake-specific Meterology (air temp, wind, precip, etc) \cr
 #' }
 #' 
 #' @export
