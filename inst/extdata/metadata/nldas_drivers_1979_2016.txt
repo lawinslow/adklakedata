@@ -1,0 +1,9 @@
+lake.name		name of each lake (standardized across all files)
+time			date of measurement in YYYY-MM-DD format
+ShortWave			Downwelling shortwave radiation in W/m^2
+LongWave			Downwelling longwave radiation in W/m^2
+AirTemp			Air temperature in deg C
+RelHum			Relative humidity in % saturation
+WindSpeed			Wind speed in m/s
+Rain			Precipitation in mm/day
+Snow			Snowfall in mm/day (directly converted from precip when air temp < 0 degC)
