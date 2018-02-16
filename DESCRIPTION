@@ -1,7 +1,7 @@
 Package: adklakedata
 Type: Package
-Title: Adirondack Long-term Lake Data
-Version: 0.4.0
+Title: Adirondack Long-Term Lake Data
+Version: 0.5.3
 Authors@R: c(person("Luke", "Winslow", role = c("aut", "cre"),
     email = "lawinslow@gmail.com"), person("Taylor", "Leach", role=c("aut")), 
     person("Tobi", "Hahn", role=c("aut")))
@@ -17,7 +17,8 @@ Imports:
     utils
 Suggests:
     ggplot2,
-    maps
+    maps,
+    testthat
 Repository: https://github.com/lawinslow/adklakedata
 BugReports: https://github.com/lawinslow/adklakedata/issues
 Encoding: UTF-8

@@ -1,12 +1,12 @@
-filenames = c("chem" = "waterchem.csv",
-              "crustacean" = "crustacean.csv",
-              "meta" = "lake_characteristics.csv",
-              "nutrient" = "nutrients.csv",
-              "phyto" = "phyto.csv",
-              "rotifer" = "rotifer.csv",
-              "secchi" = "secchi.csv",
-              "tempdo" = "temp_do_profiles.csv", 
-              "met" = "nldas_drivers_1979_2016.csv")
+filenames = c("chem" = "data/waterchem.csv",
+              "crustacean" = "data/crustacean.csv",
+              "meta" = "data/lake_characteristics.csv",
+              "nutrient" = "data/nutrients.csv",
+              "phyto" = "data/phyto.csv",
+              "rotifer" = "data/rotifer.csv",
+              "secchi" = "data/secchi.csv",
+              "tempdo" = "data/temp_do_profiles.csv", 
+              "met" = "data/nldas_drivers_1979_2016.csv")
 
 #' @title Load ADK Data
 #' 

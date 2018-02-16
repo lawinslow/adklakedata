@@ -5,6 +5,8 @@
 #' @description Function to recall metadata about each dataset. Includes units and long-name of parameters.
 #' Prints info to console as well as returning text. 
 #' 
+#' @import tools
+#' 
 #' @examples 
 #' 
 #' #Get chemistry metadata
@@ -13,7 +15,7 @@
 #' @export
 adk_metadata = function(data_name){
   data_name = match.arg(data_name, names(filenames))
-  fname = system.file(paste0("extdata/metadata/", file_path_sans_ext(filenames[data_name]), ".txt"), package = "adklakedata")
+  fname = system.file(paste0("extdata/metadata/", file_path_sans_ext(basename(filenames[data_name])), ".txt"), package = "adklakedata")
   metadata = readChar(fname, file.info(fname)$size)
   cat(metadata)
   return(invisible(metadata))

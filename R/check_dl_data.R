@@ -1,5 +1,3 @@
-env = new.env()
-env$cust_local_path = NULL
 
 #' @title Download lake data from internet
 #'
@@ -11,9 +9,7 @@ env$cust_local_path = NULL
 #' you will be required to re-download data when a new version of
 #' the package is released. This ensures stale data are not being
 #' accidentally used.
-#'
-#'
-#'
+#' 
 #' @import httr
 #' @import rappdirs
 #' @import utils
