@@ -11,8 +11,8 @@ Returns a data.frame of lake info. Includes common info like
 lake location (lat/lon), lake name, and numerical site ID.
 }
 \examples{
-set_local_path(tempdir())
+\dontrun{
 sites = adk_lakes()
-
+}
 
 }

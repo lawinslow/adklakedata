@@ -82,17 +82,3 @@ local_path = function(){
   return(path)
 }
 
-#' @title Return path to Adirondack Park Shapefile
-#'
-#' @description
-#' Downloads and unpacks the shapefile for the Adirondack Park
-#' outline shapefile. Returns the path to a locally stored shapefile
-#' that can be used for mapping an analysis.
-#'
-#' @import httr
-#'
-#' @export
-adk_shape = function(){
-  return(system.file("extdata", "BlueLine2014Poly.shp", package = "adklakedata"))
-}
-

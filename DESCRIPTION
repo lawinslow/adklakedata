@@ -1,7 +1,7 @@
 Package: adklakedata
 Type: Package
 Title: Adirondack Long-Term Lake Data
-Version: 0.5.3
+Version: 0.6.1
 Authors@R: c(person("Luke", "Winslow", role = c("aut", "cre"),
     email = "lawinslow@gmail.com"), person("Taylor", "Leach", role=c("aut")), 
     person("Tobi", "Hahn", role=c("aut")))
@@ -9,7 +9,7 @@ Description: Package for the access and distribution of Long-term lake datasets 
     Adirondack Park, northern New York state. Includes a wide variety of physical, chemical, and 
     biological parameters from 28 lakes. Data are from multiple collection organizations and have 
     been harmonized in both time and space for ease of reuse. 
-License: MIT
+License: MIT + file LICENSE
 Imports:
     rappdirs,
     httr,
@@ -18,7 +18,8 @@ Imports:
 Suggests:
     ggplot2,
     maps,
-    testthat
+    testthat,
+    sf
 Repository: https://github.com/lawinslow/adklakedata
 BugReports: https://github.com/lawinslow/adklakedata/issues
 Encoding: UTF-8

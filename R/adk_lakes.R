@@ -8,9 +8,9 @@
 #'
 #'
 #' @examples
-#' set_local_path(tempdir())
+#' \dontrun{
 #' sites = adk_lakes()
-#'
+#' }
 #'
 #' @export
 adk_lakes = function(){

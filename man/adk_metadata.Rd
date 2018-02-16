@@ -14,8 +14,8 @@ Function to recall metadata about each dataset. Includes units and long-name of 
 Prints info to console as well as returning text.
 }
 \examples{
-
+\dontrun{
 #Get chemistry metadata
 adk_metadata('chem')
-
+}
 }

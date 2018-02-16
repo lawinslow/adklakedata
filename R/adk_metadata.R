@@ -8,10 +8,10 @@
 #' @import tools
 #' 
 #' @examples 
-#' 
+#' \dontrun{
 #' #Get chemistry metadata
 #' adk_metadata('chem')
-#' 
+#' }
 #' @export
 adk_metadata = function(data_name){
   data_name = match.arg(data_name, names(filenames))

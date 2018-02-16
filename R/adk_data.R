@@ -31,13 +31,12 @@ filenames = c("chem" = "data/waterchem.csv",
 #' @import utils 
 #' 
 #' @examples 
-#' # set temp directory as local path
-#' set_local_path(tempdir())
+#' \dontrun{
 #' 
 #' #grab secchi data and plot it
 #' secchi = adk_data('secchi')
 #' plot(as.POSIXct(secchi$date), secchi$secchi)
-#' 
+#' }
 #' @export
 adk_data = function(data_name){
   data_name = tolower(data_name)

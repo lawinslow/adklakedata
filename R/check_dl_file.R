@@ -39,6 +39,7 @@ check_dl_file = function(master_file, fname = NULL, md5check = TRUE, dest=local_
 #' }
 #' 
 #' @keywords internal
+#' @noRd
 .check_dl_file = function(furl, dest, md5, md5check=FALSE){
 
   if(file.exists(dest) & !md5check){
